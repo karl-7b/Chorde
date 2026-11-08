@@ -122,6 +122,10 @@ select {
 }
 
 @media (max-width: 800px) {
+    #fret_canvas {
+      width: 100%
+    }
+
     .row-container {
       flex-direction: column;
     }
