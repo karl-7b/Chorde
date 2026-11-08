@@ -1,0 +1,122 @@
+/* 기본 설정 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* 밝은 회색 */
+  color: #333;
+}
+
+/* 헤더 */
+.header {
+  margin: 0;
+  height: 130px;
+
+}
+
+
+.headertext {
+
+  background-color: #fafafa;
+  border-bottom: 1px solid #444; /* 얇은 짙은 회색 선 */
+  padding: 16px;
+  margin: 30px 20%;
+  text-align: center;
+  font-size: 20px;
+
+  height:50px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+/* 컨테이너 */
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.row-container * {
+  margin: 20px;
+  
+}
+
+.checkbox-area * {
+  margin: 20px 5px;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  padding: 10px 30px;
+  border: none;
+}
+
+.slider {
+  appearance: none;
+  cursor: pointer;
+  background-color: #0f0f0f;
+  height: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: #f0f0f0; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border: 2px solid #0f0f0f;
+}
+
+.slider::-moz-range-thumb {
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: #f0f0f0; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border: 2px solid #0f0f0f;
+}
+
+.input_text {
+  height: 50px;
+  font-size: 30px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+#scale_root_input {
+  width: 100px;
+}
+
+#chord_input:focus {
+  width: 300px;
+  height: 50px;
+  font-size: 50px;
+  border: none;
+}
+
+/* 패널 */
+.panel {
+  background-color: #ffffff;
+  padding: 16px;
+  border-bottom: 1px solid #444; /* 구분선 */
+}
+
+/* 패널 제목 */
+.panel-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* 패널 내용 */
+.panel-content {
+  font-size: 14px;
+  color: #555;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Chorde</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="headertext">
+        <h1 class="h1">기타 도구</h1>
+    </div>
+  </header>
+
+  <!-- 패널 리스트 -->
+   <div class="column-container">
+    <canvas id="fret_canvas" width="1000px" height="400px"></canvas>
+    <div class="row-container">
+      <input type="text" id="chord_input" class="input_text">
+      <input type="text" id="scale_root_input" class="input_text">
+      <select name="scale_mode" id="scale_mode_select"></select>
+      <div class="slidecontainer">
+        <p id="range_min_text"></p>
+        <input type="range" min="0" max="20" value="0" class="slider" id="range_min">
+      </div>
+      <div class="slidecontainer">
+        <p id="range_max_text"></p>
+        <input type="range" min="0" max="22" value="22" class="slider" id="range_max">
+      </div>
+      <select name="mode" id="mode_select">
+        <option value="scale-mode">스케일 모드</option>
+        <option value="chord-tone-mode">스케일 모드(코드톤)</option>
+        <option value="chord-mode">코드 모드</option>
+      </select> 
+      <div class="checkbox-area">
+        <input type="checkbox" id="hide_notes" class="check">
+        <label for="hide_notes">범위 밖 숨기기</label>
+        <input type="checkbox" id="display_roots" class="check" checked>
+        <label for="display_roots">근음 표시</label>
+      </div>
+    </div>
+    
+    <p id="result"></p>
+   </div>
+  
+
+  <script src="script.js"></script>
+
+</body>
+</html>
