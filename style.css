@@ -121,9 +121,9 @@ select {
   color: #555;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     #fret_canvas {
-      width: 100%
+      width: 100%;
     }
 
     .row-container {
