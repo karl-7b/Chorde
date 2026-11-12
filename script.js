@@ -23,6 +23,12 @@ const MODES = {
   "AEOLIAN": [0, 2, 3, 5, 7, 8, 10],
   "PHRYGIAN": [0, 1, 3, 5, 7, 8, 10],
   "LOCRIAN": [0, 1, 3, 5, 6, 8, 10],
+  "YO SCALE": [0, 3, 5, 7, 10],
+  "IN SCALE(ASCENDING)": [0, 1, 5, 7, 10],
+  "IN SCALE(DESCENDING)": [0, 1, 5, 7, 8],
+  "IWATO SCALE": [0, 1, 5, 6, 10],
+  "RITSU SCALE": [0, 2, 5, 7, 9],
+  "RYO SCALE": [0, 2, 4, 7, 9],
 }
  
 // 각 도수의 기본(장음계 기준) 반음 수. 9/11/13은 옥타브 위로 계산
@@ -149,8 +155,12 @@ function scaleMode(root, modeName) {
   }
 
   notes = MODES[modeName]
-  notes_name = notes.map(item => spell(root[0], noteToInt(root), notes.indexOf(item) + 1, item))
-
+  if (notes.length == 7) {
+    notes_name = notes.map(item => spell(root[0], noteToInt(root), notes.indexOf(item) + 1, item))
+  } else {
+    notes_name = notes.map(item => spell_other(item))
+  }
+  
   result.innerText = `모드 이름: ${root + " " + modeName}\n
   루트: ${root}\n
   구성음: ${notes_name.join(" ")}
@@ -308,6 +318,11 @@ function spell(rootLetter, rootPc, degree, semis) {
   let diff = (((rootPc + semis - NATURAL[letter]) % 12) + 12) % 12;
   if (diff > 6) diff -= 12;
   return letter + (diff > 0 ? '#'.repeat(diff) : 'b'.repeat(-diff));
+}
+
+function spell_other(semis) {
+  const noteName = (n) => 'C C# D D# E F F# G G# A A# B'.split(' ')[((n % 12) + 12) % 12];
+  return noteName(semis)
 }
  
 const pcOf = (n) => (((NATURAL[n[0]] + ACC[n.slice(1)]) % 12) + 12) % 12;
