@@ -121,6 +121,16 @@ select {
   color: #555;
 }
 
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.main-page-link {
+  color: #555;
+  margin: 0 50px 0 auto;
+}
+
 @media (max-width: 1000px) {
     #fret_canvas {
       width: 100%;
